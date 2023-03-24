@@ -8,7 +8,7 @@ A simple Pomodoro timer that helps you manage your time and improve productivity
 * Visual feedback through console colors and beep sounds.
 
 # Usage
-Clone or download the repository.
-Open the project in Visual Studio or your preferred IDE.
-Build and run the project.
-Follow the instructions displayed in the console to start, pause, and resume Pomodoro phases.
+1. Clone or download the repository.
+2. Open the project in Visual Studio or your preferred IDE.
+3. Build and run the project.
+4. Follow the instructions displayed in the console to start, pause, and resume Pomodoro phases.
