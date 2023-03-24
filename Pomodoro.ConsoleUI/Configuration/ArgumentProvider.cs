@@ -4,21 +4,21 @@ namespace Pomodoro.ConsoleUI.Configuration;
 
 internal class ArgumentProvider
 {
-    private readonly string[] _args;
+    private readonly String[] _args;
     private readonly Parser _parser;
     private CommandLineOptions _options = new();
 
-    public ArgumentProvider(string[] args)
+    public ArgumentProvider(String[] args)
     {
         _args = args;
         _parser = new Parser(config => config.HelpWriter = Console.Out);
         ReadArguments();
     }
 
-    public double WorkTimeMinutes { get; private set; }
-    public double ShortBreakTimeMinutes { get; private set; }
-    public double LongBreakTimeMinutes { get; private set; }
-    public double Intervals { get; private set; }
+    public Int32 WorkTimeMinutes { get; private set; }
+    public Int32 ShortBreakTimeMinutes { get; private set; }
+    public Int32 LongBreakTimeMinutes { get; private set; }
+    public Int32 Intervals { get; private set; }
 
     private void ReadArguments()
     {
@@ -36,7 +36,7 @@ internal class ArgumentProvider
         result.WithNotParsed(errors =>
         {
             Console.WriteLine("Fehler bei der Verarbeitung der Argumente:");
-            Console.WriteLine($"{string.Join(Environment.NewLine, errors)}");
+            Console.WriteLine($"{String.Join(Environment.NewLine, errors)}");
         });
 
         // If the --help option was used, wait for a key press and exit the program.

@@ -5,11 +5,10 @@ using Pomodoro.ConsoleUI.Jobs;
 
 ArgumentProvider argsProvider = new(args);
 
-var test = argsProvider.WorkTimeMinutes.MinutesToMilliseconds<Double>();
-Int32 WorkTime = (Int32)test;
-Int32 shortBreakTime = (Int32)argsProvider.ShortBreakTimeMinutes.MinutesToMilliseconds<Double>();
-Int32 longBreakTime = (Int32)argsProvider.LongBreakTimeMinutes.MinutesToMilliseconds<Double>();
-Int32 intervalls = (Int32)argsProvider.Intervals;
+Int32 WorkTime = argsProvider.WorkTimeMinutes.MinutesToMilliseconds<Int32>();
+Int32 shortBreakTime = argsProvider.ShortBreakTimeMinutes.MinutesToMilliseconds<Int32>();
+Int32 longBreakTime = argsProvider.LongBreakTimeMinutes.MinutesToMilliseconds<Int32>();
+Int32 intervalls = argsProvider.Intervals;
 
 Int32 intervalCounter = 0;
 

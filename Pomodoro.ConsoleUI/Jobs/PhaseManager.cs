@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace Pomodoro.ConsoleUI.Jobs;
 public static class PhaseManager
 {
-    public static void StartPhase(PhaseKind phase, int duration, bool canPause)
+    public static void StartPhase(PhaseKind phase, Int32 duration, Boolean canPause)
     {
         DateTime now = DateTime.Now;
         TimeSpan startTime = now.TimeOfDay;
@@ -46,19 +46,19 @@ public static class PhaseManager
     { 
         while (completed < total)
         {
-            Int32 percent = (int)(((double)completed / total) * 100);
-            Int32 completeBars = (int)(((double)completed / total) * 20);
+            Int32 percent = (Int32)((double)completed / total * 100);
+            Int32 completeBars = (Int32)((double)completed / total * 20);
             Int32 remainingBars = 20 - completeBars;
 
             Console.Write("\r"); 
-            Console.Write(new string(' ', Console.WindowWidth - 1)); 
+            Console.Write(new String(' ', Console.WindowWidth - 1)); 
             Console.Write("\r");
 
             Console.Write($"[");
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write($"{new string('=', completeBars)}");
+            Console.Write($"{new String('=', completeBars)}");
             Console.ResetColor();
-            Console.Write($"{new string('-', remainingBars)}] {percent}%\r");
+            Console.Write($"{new String('-', remainingBars)}] {percent}%\r");
 
             if (canPause && Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar)
             {
